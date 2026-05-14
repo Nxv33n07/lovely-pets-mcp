@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: lovely-pets-intelligence-mcp
+    env: node
+    buildCommand: npm install
+    startCommand: npm run mcp
+    envVars:
+      - key: DB_HOST
+        value: database-2-cohort-sandbox-db.cdokim6aw6op.ap-south-1.rds.amazonaws.com
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_USER
+        value: cohort_student
+      - key: DB_PASS
+        sync: false # Set in Render dashboard securely
+      - key: DB_NAME
+        value: cohort_main
+      - key: PORT
+        value: "10000" # Render expects web app listening on default or PORT environment
+      - key: NODE_ENV
+        value: production
