@@ -717,7 +717,7 @@ TABLES: lovely_invoices, lovely_invoice_items, lovely_payments, lovely_stock, lo
               backgroundColor: "#FFFFFF",
               format: "png"
             },
-            { responseType: "arraybuffer", timeout: 8000 } // Fast timeout
+            { responseType: "arraybuffer", timeout: 2500 } // Ultra-fast timeout fallback
           );
           return { mime: "image/png", data: Buffer.from(resp.data).toString("base64") };
         });

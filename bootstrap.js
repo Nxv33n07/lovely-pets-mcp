@@ -31,7 +31,8 @@ const TABLES = {
       UNIQUE KEY \`uk_item\`      (\`invoice_id\`, \`sales_id\`, \`patient_id\`),
       KEY \`idx_item_date\`       (\`invoice_date\`),
       KEY \`idx_item_species\`    (\`species_group\`, \`invoice_date\`),
-      KEY \`idx_item_category\`   (\`std_category\`, \`invoice_date\`)
+      KEY \`idx_item_category\`   (\`std_category\`, \`invoice_date\`),
+      KEY \`idx_item_patient\`    (\`patient_id\`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   `,
   lovely_payments: `
@@ -46,7 +47,9 @@ const TABLES = {
       \`returned\`          TINYINT(1)    NOT NULL DEFAULT 0,
       PRIMARY KEY (\`payment_id\`),
       KEY \`idx_pay_date\`          (\`payment_date\`),
-      KEY \`idx_pay_returned_date\` (\`returned\`, \`payment_date\`)
+      KEY \`idx_pay_returned_date\` (\`returned\`, \`payment_date\`),
+      KEY \`idx_pay_client\`        (\`client_id\`),
+      KEY \`idx_pay_invoice\`       (\`invoice_id\`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
   `,
   lovely_stock: `

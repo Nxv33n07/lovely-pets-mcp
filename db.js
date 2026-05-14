@@ -16,6 +16,7 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   timezone: "+00:00",
+  connectTimeout: 5000, // Fail-fast if DNS/network is offline
 });
 
 async function query(sql, params = []) {

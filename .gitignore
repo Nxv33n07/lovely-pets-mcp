@@ -1,5 +1,8 @@
 # Dependency directories
+node_module/
 node_modules/
+node_modules
+node_module
 
 # Local environment files
 .env
